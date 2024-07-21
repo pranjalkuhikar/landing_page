@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useScroll, motion, useTransform, MotionValue } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
-type MainSectionProps = {
+type Props = {
   title: string;
   description: string;
 };
@@ -16,7 +16,7 @@ type WordProps = {
   progress: MotionValue<number>;
 };
 
-const MainSection = ({ title, description }: MainSectionProps) => {
+const MainSection = ({ title, description }: Props) => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
