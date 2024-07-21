@@ -16,7 +16,7 @@ type WordProps = {
   progress: MotionValue<number>;
 };
 
-const MainSection = ({ title, description }: Props) => {
+export default function MainSection({ title, description }: Props) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -102,9 +102,7 @@ const MainSection = ({ title, description }: Props) => {
       </section>
     </main>
   );
-};
-
-export default MainSection;
+}
 
 const Word = ({ children, range, progress }: WordProps) => {
   const opacity = useTransform(progress, range, [0, 1]);
